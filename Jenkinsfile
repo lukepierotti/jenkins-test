@@ -5,7 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'rm -r node_modules'
                 sh 'npm i --production'
                 sh 'npm run build'
                 echo 'finished install node modules..'
