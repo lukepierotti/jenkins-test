@@ -5,8 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'npm i --production'
+                sh 'npm i'
                 sh 'npm run build'
+                sh 'rm -r node_modules'
+                sh 'npm i --production'
                 echo 'finished install node modules..'
                 sh 'zip -r node_modules.zip /node_modules'
                 sh 'cp -avr node_modules.zip /dist'
