@@ -11,7 +11,7 @@ pipeline {
                 sh 'npm i --production'
                 echo 'finished install node modules..'
                 sh 'zip -r node_modules.zip node_modules'
-                sh 'cp -avr node_modules.zip /dist'
+                sh 'cp -av node_modules.zip /dist'
                 echo 'node modules zipped and copied'
             }
         }
