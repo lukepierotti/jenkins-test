@@ -10,7 +10,7 @@ pipeline {
                 sh 'rm -r node_modules'
                 sh 'npm i --production'
                 echo 'finished install node modules..'
-                sh 'zip -r node_modules.zip /node_modules'
+                sh 'zip -r node_modules.zip node_modules'
                 sh 'cp -avr node_modules.zip /dist'
                 echo 'node modules zipped and copied'
             }
